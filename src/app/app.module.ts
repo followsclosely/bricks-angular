@@ -14,7 +14,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatButtonModule} from '@angular/material/button';
-import {MatTabsModule} from '@angular/material/tabs';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatIconModule} from '@angular/material/icon';
 
 import { FranchiseService } from './franchise.service';
 
@@ -29,7 +30,8 @@ import { FranchiseService } from './franchise.service';
     MatSelectModule, 
     MatButtonToggleModule,
     MatButtonModule,
-    MatTabsModule
+    MatExpansionModule,
+    MatIconModule
    ],
   declarations: [ AppComponent, HelloComponent ],
   bootstrap:    [ AppComponent ],
