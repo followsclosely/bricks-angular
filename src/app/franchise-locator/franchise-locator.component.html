@@ -16,7 +16,8 @@
     <div *ngIf="country.franchises">
       <mat-list role="list">
         <mat-list-item *ngFor="let franchise of country.franchises">
-          <a routerLink="/franchise/{{franchise.id}}" routerLinkActive="active">{{franchise.name}}</a>
+          <a routerLink="/franchise/{{franchise.id}}" routerLinkActive="active"
+          [state]="{franchise: franchise}">{{franchise.name}}</a>
         </mat-list-item>
       </mat-list>
     </div>
@@ -28,7 +29,7 @@
           <mat-card-content>
             <mat-list role="list">
               <mat-list-item *ngFor="let franchise of group.franchises">
-                {{franchise.name}}
+                <a routerLink="/franchise/{{franchise.id}}" routerLinkActive="active">{{franchise.name}}</a>
               </mat-list-item>
             </mat-list>
           </mat-card-content>

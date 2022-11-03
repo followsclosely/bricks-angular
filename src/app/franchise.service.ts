@@ -67,9 +67,9 @@ export class FranchiseService {
         {
           name: 'Virginia', 
           franchises:[
-            {id: 1, name: 'LEGO® Store Fashion Centre At Pentagon City', lastUpdate: new Date() },
-            {id: 1, name: 'LEGO® Store Tysons Corner', lastUpdate: new Date() },
-            {id: 1, name: 'LEGO® Store Woodbridge', lastUpdate: new Date() }
+            {id: 22, name: 'LEGO® Store Fashion Centre At Pentagon City', lastUpdate: new Date() },
+            {id: 23, name: 'LEGO® Store Tysons Corner', lastUpdate: new Date() },
+            {id: 24, name: 'LEGO® Store Woodbridge', lastUpdate: new Date() }
           ] 
         }
       ]
@@ -78,7 +78,38 @@ export class FranchiseService {
 
   constructor() { }
 
-  getFranchises(): FranchiseByCountry[] {
+  public getFranchises() : FranchiseByCountry[] {
     return this.franchises;
+  }
+
+  public getFranchise(id : number) : Franchise {
+
+    //Loop thought all the franchises if there are any.
+    for (var j = 0, jlen = this.franchises.length; j < jlen; j++) {
+      var country = this.franchises[j];
+
+      if( country.franchises ){
+        for (var i = 0, ilen = country.franchises.length; i < ilen; i++){
+          var franchise = country.franchises[i];
+          if( franchise.id == id) {
+            return franchise;
+          }
+        }
+      }
+
+      if( country.groups ){
+        for (var i = 0, ilen = country.groups.length; i < ilen; i++){
+          var group = country.groups[i];
+          for (var k = 0, klen = group.franchises.length; k < klen; k++){
+            var franchise = group.franchises[k];
+            if( franchise.id == id) {
+              return franchise;
+            }
+          }
+        }
+      }
+    }
+
+    return {id: null, name: null, lastUpdate: null };
   }
 }
