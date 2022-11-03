@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -8,6 +9,10 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
+import { FranchiseComponent } from './franchise/franchise.component';
+import { FranchiseLocatorComponent } from './franchise-locator/franchise-locator.component';
+
+
 
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
@@ -20,6 +25,17 @@ import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 
 import { FranchiseService } from './franchise.service';
+
+const appRoutes: Routes = [
+  { path: ''             , redirectTo: '/franchises', pathMatch: 'full' },
+  { path: 'company'      , component: AppComponent },
+  { path: 'franchise/:id', component: FranchiseComponent, 
+    data: { breadcrumb: ['1','2'] }
+  },
+  { path: 'franchises'          , component: FranchiseLocatorComponent,
+  data: { breadcrumb: ['1','2'] }
+  }
+];
 
 @NgModule({
   imports:      [ 
@@ -36,9 +52,10 @@ import { FranchiseService } from './franchise.service';
     MatIconModule,
     MatGridListModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    RouterModule.forRoot( appRoutes,{ enableTracing: false } )
    ],
-  declarations: [ AppComponent ],
+  declarations: [ AppComponent, FranchiseComponent, FranchiseLocatorComponent],
   bootstrap:    [ AppComponent ],
   providers:    [ FranchiseService ]
 })

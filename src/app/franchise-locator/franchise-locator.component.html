@@ -1,0 +1,75 @@
+<h4>LEGO Stores</h4>
+
+<!-- <div style="text-align:center">
+  <mat-button-toggle>All Stores</mat-button-toggle> &nbsp;
+  <mat-button-toggle>Asia Pacific</mat-button-toggle> &nbsp;
+  <mat-button-toggle>Europe</mat-button-toggle> &nbsp;
+  <mat-button-toggle>North America</mat-button-toggle> &nbsp;
+  <mat-button-toggle>South America</mat-button-toggle> &nbsp;
+</div> -->
+
+<mat-accordion class="example-headers-align" multi>
+  <mat-expansion-panel *ngFor="let country of franchises">
+    <mat-expansion-panel-header>
+      <mat-panel-title>{{country.name}}</mat-panel-title>
+    </mat-expansion-panel-header>
+    <div *ngIf="country.franchises">
+      <mat-list role="list">
+        <mat-list-item *ngFor="let franchise of country.franchises">
+          <a routerLink="/franchise/{{franchise.id}}" routerLinkActive="active">{{franchise.name}}</a>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <div *ngIf="country.groups">
+    <mat-grid-list cols="3">
+      <mat-grid-tile *ngFor="let group of country.groups" [colspan]="1" [rowspan]="1">
+        <mat-card class="my-card">
+          <mat-card-title>{{group.name}}</mat-card-title>
+          <mat-card-content>
+            <mat-list role="list">
+              <mat-list-item *ngFor="let franchise of group.franchises">
+                {{franchise.name}}
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card> 
+      </mat-grid-tile>
+    </mat-grid-list>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<!-- <mat-form-field appearance="fill">
+<mat-label>State</mat-label>
+<mat-select [formControl]="stateControl">
+  <mat-option>-- All --</mat-option>
+  <mat-option *ngFor="let state of franchises" [value]="state.name" [disabled]="state.disabled">
+      {{state.name}}
+  </mat-option>
+</mat-select>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label>Store</mat-label>
+  <mat-select [formControl]="franchiseControl">
+    <ng-container *ngIf="!stateControl.value">
+      <mat-option>-- None --</mat-option>
+      <mat-optgroup *ngFor="let group of franchises" [label]="group.name" [disabled]="group.disabled">
+        <ng-container *ngIf="!stateControl.value || stateControl.value === group.name ">
+          <mat-option *ngFor="let franchise of group.franchises" [value]="franchise.name">
+            {{franchise.name}}
+          </mat-option>
+        </ng-container>
+      </mat-optgroup>
+    </ng-container>
+    <ng-container *ngIf="stateControl.value">
+      <ng-container *ngFor="let group of franchises">
+        <ng-container *ngIf="!stateControl.value || stateControl.value === group.name ">
+          <mat-option *ngFor="let franchise of group.franchises" [value]="franchise.name">
+            {{franchise.name}}
+          </mat-option>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+  </mat-select>
+</mat-form-field> -->

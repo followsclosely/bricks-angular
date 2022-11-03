@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
 
-import { FranchiseService, FranchiseGroup, FranchiseByCountry } from './franchise.service';
+import { FranchiseService, FranchiseByCountry } from '../franchise.service';
 
 @Component({
-  selector: 'my-app',
-  templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  selector: 'app-franchise-locator',
+  templateUrl: './franchise-locator.component.html',
+  styleUrls: ['./franchise-locator.component.css']
 })
-export class AppComponent {
+export class FranchiseLocatorComponent implements OnInit {
   franchises : FranchiseByCountry[];
 
   stateControl = new FormControl('');
@@ -16,6 +16,9 @@ export class AppComponent {
 
   constructor(franchiseService : FranchiseService) {
     this.franchises = franchiseService.getFranchises();
+  }
+
+  ngOnInit() {
   }
 
 }
