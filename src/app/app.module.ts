@@ -8,7 +8,6 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
 
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
@@ -39,7 +38,7 @@ import { FranchiseService } from './franchise.service';
     MatCardModule,
     MatListModule
    ],
-  declarations: [ AppComponent, HelloComponent ],
+  declarations: [ AppComponent ],
   bootstrap:    [ AppComponent ],
   providers:    [ FranchiseService ]
 })
