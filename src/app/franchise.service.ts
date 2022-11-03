@@ -7,36 +7,63 @@ export interface Franchise {
 }
 
 export interface FranchiseGroup {
-  disabled?: boolean;
   name: string;
   franchises: Franchise[];
 }
 
+export interface FranchiseByCountry {
+  name: string;
+  groups: FranchiseGroup[];
+  franchises: Franchise[];
+}
+
+
 @Injectable()
 export class FranchiseService {
 
-  franchises: FranchiseGroup[] = [
+  franchises: FranchiseByCountry[] = [
     {
-      name: 'California', franchises:[
-        {id: 1, name: 'Downtown Disney District', lastUpdate: new Date() },
-        {id: 1, name: 'Fashion Valley', lastUpdate: new Date() },
-        {id: 1, name: 'Glendale Galleria', lastUpdate: new Date() },
-        {id: 1, name: 'Hillsdale Shopping Center', lastUpdate: new Date() },
-        {id: 1, name: 'Ontario Mills', lastUpdate: new Date() },
-        {id: 1, name: 'South Coast Plaza', lastUpdate: new Date() }
-      ] 
+      name: 'Canada',
+      groups: null,
+      franchises: [
+          {id: 1, name: 'LEGO® Store Carrefour Laval', lastUpdate: new Date() },
+          {id: 1, name: 'LEGO® Store Cf Rideau Centre', lastUpdate: new Date() },
+          {id: 1, name: 'LEGO® Store Chinook Center', lastUpdate: new Date() },
+          {id: 1, name: 'LEGO® Store Fairview Mall', lastUpdate: new Date() },
+          {id: 1, name: 'LEGO® Store Fairview Pointe Claire', lastUpdate: new Date() },
+          {id: 1, name: 'LEGO® Store Guilford Town Centre', lastUpdate: new Date() }
+      ]
     },
     {
-      name: 'Virginia', franchises:[
-        {id: 1, name: 'Tysons Corner', lastUpdate: new Date() },
-        {id: 1, name: 'Woodbridge', lastUpdate: new Date() }
-      ] 
-    }];
-
+      name: 'United States',
+      franchises: null,
+      groups: [
+        {
+          name: 'California', 
+          franchises:[
+            {id: 1, name: 'LEGO® Store Downtown Disney District', lastUpdate: new Date() },
+            {id: 1, name: 'LEGO® Store Fashion Valley', lastUpdate: new Date() },
+            {id: 1, name: 'LEGO® Store Glendale Galleria', lastUpdate: new Date() },
+            {id: 1, name: 'LEGO® Store Hillsdale Shopping Center', lastUpdate: new Date() },
+            {id: 1, name: 'LEGO® Store Ontario Mills', lastUpdate: new Date() },
+            {id: 1, name: 'LEGO® Store South Coast Plaza', lastUpdate: new Date() }
+          ] 
+        },
+        {
+          name: 'Virginia', 
+          franchises:[
+            {id: 1, name: 'LEGO® Store Fashion Centre At Pentagon City', lastUpdate: new Date() },
+            {id: 1, name: 'LEGO® Store Tysons Corner', lastUpdate: new Date() },
+            {id: 1, name: 'LEGO® Store Woodbridge', lastUpdate: new Date() }
+          ] 
+        }
+      ]
+    }
+  ];
 
   constructor() { }
 
-  getFranchises(): FranchiseGroup[] {
+  getFranchises(): FranchiseByCountry[] {
     return this.franchises;
   }
 }

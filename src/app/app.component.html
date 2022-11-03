@@ -14,10 +14,33 @@
 </div>
 
 <mat-accordion class="example-headers-align" multi>
-  <mat-expansion-panel>
+  <mat-expansion-panel *ngFor="let country of franchises">
     <mat-expansion-panel-header>
-      <mat-panel-title>United States</mat-panel-title>
+      <mat-panel-title>{{country.name}}</mat-panel-title>
     </mat-expansion-panel-header>
+    <div *ngIf="country.franchises">
+      <mat-list role="list">
+        <mat-list-item *ngFor="let franchise of country.franchises">
+          {{franchise.name}}
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <div *ngIf="country.groups">
+    <mat-grid-list cols="3">
+      <mat-grid-tile *ngFor="let group of country.groups" [colspan]="1" [rowspan]="1">
+        <mat-card class="my-card">
+          <mat-card-title>{{group.name}}</mat-card-title>
+          <mat-card-content>
+            <mat-list role="list">
+              <mat-list-item *ngFor="let franchise of group.franchises">
+                {{franchise.name}}
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card> 
+      </mat-grid-tile>
+    </mat-grid-list>
+    </div>
   </mat-expansion-panel>
 </mat-accordion>
 

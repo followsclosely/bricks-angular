@@ -10,3 +10,8 @@ p {
 .mat-form-field + .mat-form-field {
   margin-left: 8px;
 }
+
+mat-card {
+  width: 100%;
+  height: calc(100%);
+}

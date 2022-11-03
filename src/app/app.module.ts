@@ -16,6 +16,9 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatButtonModule} from '@angular/material/button';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatIconModule} from '@angular/material/icon';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
 
 import { FranchiseService } from './franchise.service';
 
@@ -31,7 +34,10 @@ import { FranchiseService } from './franchise.service';
     MatButtonToggleModule,
     MatButtonModule,
     MatExpansionModule,
-    MatIconModule
+    MatIconModule,
+    MatGridListModule,
+    MatCardModule,
+    MatListModule
    ],
   declarations: [ AppComponent, HelloComponent ],
   bootstrap:    [ AppComponent ],

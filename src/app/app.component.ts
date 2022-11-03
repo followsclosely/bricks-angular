@@ -1,7 +1,7 @@
 import { Component, VERSION } from '@angular/core';
 import {FormControl} from '@angular/forms';
 
-import { FranchiseService, FranchiseGroup } from './franchise.service';
+import { FranchiseService, FranchiseGroup, FranchiseByCountry } from './franchise.service';
 
 @Component({
   selector: 'my-app',
@@ -10,7 +10,7 @@ import { FranchiseService, FranchiseGroup } from './franchise.service';
 })
 export class AppComponent  {
   name = 'Angular ' + VERSION.major;
-  franchises : FranchiseGroup[];
+  franchises : FranchiseByCountry[];
 
   stateControl = new FormControl('');
   franchiseControl = new FormControl('');
