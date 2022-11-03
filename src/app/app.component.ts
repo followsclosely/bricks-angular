@@ -12,6 +12,7 @@ export class AppComponent  {
   name = 'Angular ' + VERSION.major;
   franchises : FranchiseGroup[];
 
+  stateControl = new FormControl('');
   franchiseControl = new FormControl('');
 
   constructor(franchiseService : FranchiseService) {
