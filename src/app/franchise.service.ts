@@ -35,6 +35,21 @@ export class FranchiseService {
       ]
     },
     {
+      name: 'Mexico',
+      groups: null,
+      franchises: [
+          {id: 1, name: 'LEGO® Store Altacia', lastUpdate: new Date() },
+          {id: 1, name: 'LEGO® Store Altaria', lastUpdate: new Date() },
+          {id: 1, name: 'LEGO® Store Averanda', lastUpdate: new Date() },
+          {id: 1, name: 'LEGO® Store Galerias Guadalajara', lastUpdate: new Date() },
+          {id: 1, name: 'LEGO® Store Galerias Pachuca', lastUpdate: new Date() },
+          {id: 1, name: 'LEGO® Store Galerias Queretaro', lastUpdate: new Date() },
+          {id: 1, name: 'LEGO® Store Galerías Monterrey', lastUpdate: new Date() },
+          {id: 1, name: 'LEGO® Store Galerías Saltillo', lastUpdate: new Date() },
+          {id: 1, name: 'LEGO® Store La Isla Cancun', lastUpdate: new Date() }
+      ]
+    },
+    {
       name: 'United States',
       franchises: null,
       groups: [
