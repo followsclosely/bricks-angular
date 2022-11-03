@@ -29,7 +29,6 @@
       </mat-optgroup>
     </ng-container>
     <ng-container *ngIf="stateControl.value">
-    <mat-option>-- None --</mat-option>
       <ng-container *ngFor="let group of franchises">
         <ng-container *ngIf="!stateControl.value || stateControl.value === group.name ">
           <mat-option *ngFor="let franchise of group.franchises" [value]="franchise.name">
