@@ -25,6 +25,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
 
 import { FranchiseService } from './franchise.service';
 
@@ -57,6 +58,7 @@ const appRoutes: Routes = [
     MatListModule,
     MatTableModule,
     MatDialogModule,
+    MatInputModule,
     RouterModule.forRoot( appRoutes,{ enableTracing: false } )
    ],
   declarations: [ AppComponent, FranchiseComponent, FranchiseLocatorComponent, PieceLocatorComponent],

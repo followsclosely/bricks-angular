@@ -9,6 +9,7 @@ import {FormControl} from '@angular/forms';
 export class PieceLocatorComponent implements OnInit {
 
   viewControl = new FormControl('popular');
+  searchFormControl = new FormControl('');
 
   filterModes = [
     {value: 'all',     display: 'All Pieces'},
