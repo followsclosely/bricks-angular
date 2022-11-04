@@ -11,7 +11,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FranchiseComponent } from './franchise/franchise.component';
 import { FranchiseLocatorComponent } from './franchise-locator/franchise-locator.component';
-
+import { PieceLocatorComponent } from './piece-locator/piece-locator.component';
 
 
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -24,6 +24,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { FranchiseService } from './franchise.service';
 
@@ -55,9 +56,10 @@ const appRoutes: Routes = [
     MatCardModule,
     MatListModule,
     MatTableModule,
+    MatDialogModule,
     RouterModule.forRoot( appRoutes,{ enableTracing: false } )
    ],
-  declarations: [ AppComponent, FranchiseComponent, FranchiseLocatorComponent],
+  declarations: [ AppComponent, FranchiseComponent, FranchiseLocatorComponent, PieceLocatorComponent],
   bootstrap:    [ AppComponent ],
   providers:    [ FranchiseService ]
 })

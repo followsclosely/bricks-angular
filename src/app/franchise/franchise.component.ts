@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Franchise, FranchiseService } from '../franchise.service';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { PieceLocatorComponent } from '../piece-locator/piece-locator.component';
 
 export interface LegoColor {
   id : string;
@@ -47,6 +49,7 @@ export class FranchiseComponent implements OnInit {
   //displayedColumns : string[] = ['image', 'id', 'color', 'element.name', 'lastUpdate', 'actions'];
 
   constructor(
+    public dialog: MatDialog,
     private franchiseService : FranchiseService,
     private route: ActivatedRoute) {
 
@@ -379,4 +382,11 @@ export class FranchiseComponent implements OnInit {
     this.franchise= this.franchiseService.getFranchise(Number(id));
   }
 
+  openDialog(): void {
+    alert('stink');
+    const dialogRef = this.dialog.open(PieceLocatorComponent, {
+      width: '250px',
+      data: {name: 'this.name', animal: 'this.animal'},
+    });
+  }
 }
