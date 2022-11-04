@@ -36,8 +36,15 @@ export class FranchiseComponent implements OnInit {
   wall : LegoPiece[];
   layout : string = "grid";
   size : string;
-
-  displayedColumns : string[] = ['image', 'id', 'color', 'element.name', 'lastUpdate'];
+  
+  getDisplayedColumns(): string[] {
+    if(this.layout === 'edit'){
+      return ['image', 'id', 'color', 'element.name', 'lastUpdate', 'actions'];
+    } else {
+      return ['image', 'id', 'color', 'element.name', 'lastUpdate'];
+    }
+  }
+  //displayedColumns : string[] = ['image', 'id', 'color', 'element.name', 'lastUpdate', 'actions'];
 
   constructor(
     private franchiseService : FranchiseService,
