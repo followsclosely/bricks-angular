@@ -383,9 +383,8 @@ export class FranchiseComponent implements OnInit {
   }
 
   openDialog(): void {
-    alert('stink');
     const dialogRef = this.dialog.open(PieceLocatorComponent, {
-      width: '250px',
+      width: '500px',
       data: {name: 'this.name', animal: 'this.animal'},
     });
   }
