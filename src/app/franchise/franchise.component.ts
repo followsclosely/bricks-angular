@@ -384,7 +384,7 @@ export class FranchiseComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(PieceLocatorComponent, {
-      width: '500px',
+      width: '95%', height: '95%',
       data: {name: 'this.name', animal: 'this.animal'},
     });
   }
