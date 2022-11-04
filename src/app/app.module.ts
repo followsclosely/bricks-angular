@@ -2,18 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-
-
-import { AppComponent } from './app.component';
-import { FranchiseComponent } from './franchise/franchise.component';
-import { FranchiseLocatorComponent } from './franchise-locator/franchise-locator.component';
-
-
-
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
@@ -24,6 +14,11 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
+
+import { AppComponent } from './app.component';
+import { FranchiseComponent } from './franchise/franchise.component';
+import { FranchiseLocatorComponent } from './franchise-locator/franchise-locator.component';
 
 import { FranchiseService } from './franchise.service';
 
@@ -55,6 +50,7 @@ const appRoutes: Routes = [
     MatCardModule,
     MatListModule,
     MatTableModule,
+    MatDialogModule,
     RouterModule.forRoot( appRoutes,{ enableTracing: false } )
    ],
   declarations: [ AppComponent, FranchiseComponent, FranchiseLocatorComponent],

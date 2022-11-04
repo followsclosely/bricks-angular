@@ -1,12 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Franchise, FranchiseService } from '../franchise.service';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-export interface LegoColor {
-  id : string;
-  name: string;
-  rgb : string;
-}
+import { Franchise, FranchiseService } from '../franchise.service';
+import { PieceLocatorComponent } from '../piece-locator/piece-locator.component';
 
 export interface LegoPiece {
   id : string;
@@ -15,15 +12,21 @@ export interface LegoPiece {
   color : LegoColor;
 }
 
+export interface LegoElement {
+  id : string;
+  name : string;
+  category : LegoCategory;
+}
+
 export interface LegoCategory {
   id : string;
   name: string;
 }
 
-export interface LegoElement {
+export interface LegoColor {
   id : string;
-  name : string;
-  category : LegoCategory;
+  name: string;
+  rgb : string;
 }
 
 @Component({
@@ -44,10 +47,10 @@ export class FranchiseComponent implements OnInit {
       return ['image', 'id', 'color', 'element.name', 'lastUpdate'];
     }
   }
-  //displayedColumns : string[] = ['image', 'id', 'color', 'element.name', 'lastUpdate', 'actions'];
 
   constructor(
-    private franchiseService : FranchiseService,
+    private dialog: MatDialog,
+    private franchiseService: FranchiseService,
     private route: ActivatedRoute) {
 
       this.wall = [ {
@@ -377,6 +380,14 @@ export class FranchiseComponent implements OnInit {
     const routeParams = this.route.snapshot.paramMap;
     const id = routeParams.get('id');
     this.franchise= this.franchiseService.getFranchise(Number(id));
+  }
+
+  openEditPopup(){
+    this.dialog.open(PieceLocatorComponent, {
+      data: {
+        animal: 'panda',
+      },
+    });
   }
 
 }
