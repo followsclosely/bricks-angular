@@ -23,6 +23,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
+import {MatTableModule} from '@angular/material/table';
 
 import { FranchiseService } from './franchise.service';
 
@@ -53,6 +54,7 @@ const appRoutes: Routes = [
     MatGridListModule,
     MatCardModule,
     MatListModule,
+    MatTableModule,
     RouterModule.forRoot( appRoutes,{ enableTracing: false } )
    ],
   declarations: [ AppComponent, FranchiseComponent, FranchiseLocatorComponent],

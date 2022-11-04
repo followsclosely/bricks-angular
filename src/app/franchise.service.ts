@@ -68,7 +68,11 @@ export class FranchiseService {
           name: 'Virginia', 
           franchises:[
             {id: 22, name: 'LEGO® Store Fashion Centre At Pentagon City', lastUpdate: new Date() },
-            {id: 23, name: 'LEGO® Store Tysons Corner', lastUpdate: new Date() },
+            {
+              id: 23, 
+              name: 'LEGO® Store Tysons Corner', 
+              lastUpdate: new Date()
+            },
             {id: 24, name: 'LEGO® Store Woodbridge', lastUpdate: new Date() }
           ] 
         }
